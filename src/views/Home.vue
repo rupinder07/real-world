@@ -1,18 +1,37 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="banner">
+      <h1>conduit</h1>
+      <h2>A place to share your knowledge</h2>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
+  name: 'home'
 }
 </script>
+
+
+<style>
+  .banner {
+    background-color: #5cb85c;
+    border: 1px 1px;
+    height: 200px;
+    text-align: center;
+    padding: 1rem;
+    color: #fff
+  }
+
+  .banner h1{
+    font-family: titillium web,sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .banner h2 {
+    font-family: titillium web,sans-serif;
+    font-weight: 200;
+    font-size: 2rem;
+  }
+</style>
