@@ -25,9 +25,25 @@ const UserModule = {
     }
 }
 
+const TagModule = {
+    state: {
+        tags: []
+    },
+    getters: {
+        getTags: state => state.tags
+    },
+    mutations: {
+        setTags: (state, tagsList) => state.tags = tagsList
+    },
+    actions: {
+        setTags: (store, tagsList) => store.commit('setTags', tagsList)
+    }
+}
+
 const store = new Vuex.Store({
     modules: {
-        user: UserModule
+        user: UserModule,
+        tags: TagModule
     }
 });
 

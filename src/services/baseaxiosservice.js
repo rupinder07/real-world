@@ -7,6 +7,10 @@ const AxiosService = {
 
     post(resource, body) {
         return axios.post(this.baseUrl + resource, body);
+    },
+
+    get(resource) {
+        return axios.get(this.baseUrl + resource);
     }
 
 }
