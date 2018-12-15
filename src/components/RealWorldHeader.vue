@@ -1,20 +1,32 @@
 <template>
-<nav class="navbar-brand">
-    <div class="logo-out">
-        <div class="logo">conduit</div>
-    </div>
-    <div class="nav-right">
-        <ul>
-            <li>Home</li>
-            <li v-if="isLoggedIn"> <router-link to="/sign-in">New Article</router-link></li>
-            <li v-if="isLoggedIn"> <router-link to="/sign-in">Settings</router-link></li>
-            <li v-if="isLoggedIn"> <router-link to="/sign-in">{{ userName }}</router-link></li>
-            <li v-if="!isLoggedIn"><router-link to="/sign-in">Sign In</router-link></li>
-            <li v-if="!isLoggedIn"><router-link to="/sign-up">Sign Up</router-link></li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between container">
+        <a class="navbar-brand">conduit</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <router-link class="nav-link" to="home">Home</router-link>
+                <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item active">
+                <router-link class="nav-link" v-if="isLoggedIn" to="editor">New Article</router-link>
+                <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+                <router-link class="nav-link" v-if="isLoggedIn" to="article">Settings</router-link>
+                <span class="sr-only">(current)</span>
+            </li>
+            <li class="navbar-text" v-if="isLoggedIn">{{ userName }}</li>
+            <li class="nav-item">
+                <router-link class="nav-link" v-if="!isLoggedIn" to="sign-in"> Sign In</router-link>
+                    <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+                    <router-link class="nav-link" v-if="!isLoggedIn" to="sign-up"> Sign Up</router-link>
+                    <span class="sr-only">(current)</span>
+            </li>
         </ul>
-    </div>
-    <div class="clear"></div>
-</nav>
+        </div>
+    </nav>
 </template>
 
 <script>
@@ -73,6 +85,19 @@ export default {
         font-size: 1.5rem;
         padding-top: 0;
         margin-right: 2rem;
+    }
+
+    .navbar-nav li.nav-item {
+        display: inline-block;
+        position: relative;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .size-3-rem {
+        font-size: 3rem
     }
 
 </style>

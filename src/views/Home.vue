@@ -1,18 +1,39 @@
 <template>
-    <div class="banner">
-      <h1>conduit</h1>
-      <h2>A place to share your knowledge</h2>
+    <div>
+      <div class="banner">
+        <h1>conduit</h1>
+        <h2>A place to share your knowledge</h2>
+      </div>
+      <div class="container">
+        <div class="row margin-top-30">
+          <div class="col-8">
+            <ArticleListView/>
+          </div>
+          <div class="col-4">
+            <Tags/>
+          </div>
+        </div>
+      </div>
     </div>
 </template>
 
 <script>
+
+import Tags from './Tags'
+import ArticleListView from './ArticleListView'
+
 export default {
-  name: 'home'
+  name: 'home',
+  components: {
+    Tags,
+    ArticleListView
+  }
 }
 </script>
 
 
 <style>
+
   .banner {
     background-color: #5cb85c;
     border: 1px 1px;
@@ -33,5 +54,9 @@ export default {
     font-family: titillium web,sans-serif;
     font-weight: 200;
     font-size: 2rem;
+  }
+
+  .margin-top-30 {
+    padding-top: 30px; 
   }
 </style>
