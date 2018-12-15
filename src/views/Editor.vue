@@ -41,8 +41,7 @@ export default {
     }, 
     methods: {
         publish() {
-            let router = this.$router; 
-            let store = this.$store;
+            let router = this.$router;
             AxiosService.post('articles', {
                 "article": {
                     "title":this.title,
@@ -52,7 +51,7 @@ export default {
                 }
             },
             this.$store.getters.getUser.token)
-            .then((response) => {   
+            .then(() => {   
                 router.push('home');
             })
             .catch((error) => console.log(error));
