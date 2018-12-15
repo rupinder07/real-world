@@ -1,20 +1,33 @@
 <template>
-  <div class="signin">
-    <div class="row">
-      <label>Username</label>
-      <input v-model="username"/>
+  <div class="container">
+        <div class="row">
+            <div class="col center size-3-rem margin-top-30">
+                Sign In
+            </div>
+        </div>
+        <div class="row">
+            <div class="col center">
+                <router-link to="/sign-in" style="color:#3D8B3D">Need an account?</router-link>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-7">
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" v-model="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" v-model="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-success align-right"  @click="signIn">Submit</button>
+                </form>
+            </div>
+            <div class="col">
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <label>Password</label>
-      <input v-model="password" type="password"/>
-    </div>
-    <div class="row" v-if="showError">
-      <label>Invalid username/password</label>
-    </div>
-    <div class="row">
-      <button @click="signIn">Sign In</button>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -25,7 +38,7 @@ export default {
   name: 'SignIn',
   data() {
     return {
-      username: null,
+      email: null,
       password: null,
       showError: false
     }
@@ -34,7 +47,7 @@ export default {
     signIn() {
        let store = this.$store;
        let router = this.$router; 
-       LoginService.login(this.username, this.password)
+       LoginService.login(this.email, this.password)
        .then(response => {
           let user = response.data.user;
           store.dispatch('login', user);

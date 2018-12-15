@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <div id="app">
       <RealWorldHeader/>
       <router-view></router-view>
@@ -12,6 +12,10 @@
 <script>
 import RealWorldHeader from "@/components/RealWorldHeader"
 import RealWorldFooter from "@/components/RealWorldFooter"
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 export default {
   name: "App",
   components: {
@@ -24,10 +28,6 @@ export default {
 
 
 <style>
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
-}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -46,4 +46,8 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+  .margin-top-30 {
+    padding-top: 30px; 
+  }
 </style>

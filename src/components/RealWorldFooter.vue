@@ -15,10 +15,11 @@ export default {
     .footer{
         position: fixed;
         bottom: 0;
-        max-width: 1280px;
         background: #d8d8d8;
         padding: 10px;
         width: 100%;
+        max-width: 1280px;
+        margin-left: 15%
     }
 
     .logo {

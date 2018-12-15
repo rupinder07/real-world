@@ -4,12 +4,14 @@
         <h1>conduit</h1>
         <h2>A place to share your knowledge</h2>
       </div>
-      <div class="container-inner">
-        <div class="container-left">
-          <ArticleListView/>
-        </div>
-        <div class="container-right">
-          <Tags/>
+      <div class="container">
+        <div class="row margin-top-30">
+          <div class="col-8">
+            <ArticleListView/>
+          </div>
+          <div class="col-4">
+            <Tags/>
+          </div>
         </div>
       </div>
     </div>
@@ -54,22 +56,7 @@ export default {
     font-size: 2rem;
   }
 
-  .container-inner {
+  .margin-top-30 {
     padding-top: 30px; 
-  }
-
-  .container-left,
-  .container-right {
-    display: inline-block;
-    position: relative;
-  }
-
-  .container-left {
-    width: calc(70% - 30px);
-    margin-right: 30px;
-  }
-
-  .container-right {
-    width: 30%;
   }
 </style>

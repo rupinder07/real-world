@@ -2,7 +2,7 @@
     <div class="tag-container">
         <label>Popular Tags</label>
         <ul>
-            <li v-for="tag in tags" :key="tag">
+            <li v-for="tag in getTags" :key="tag">
                 <a href="#">{{tag}}</a>
             </li>
         </ul>
@@ -15,12 +15,13 @@
 
     export default {
         name: 'Tags',
-        data() {
-            return {
-                tags: this.$store.getters.getTags
+        computed: {
+            getTags() {
+                return this.$store.getters.getTags
             }
         },
         created() {
+            // console.log("created");
             let store = this.$store;
             TagService.fetchTags()
             .then(response => {

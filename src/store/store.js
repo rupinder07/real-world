@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { stat } from "fs";
 
 Vue.use(Vuex);
 
@@ -40,10 +41,30 @@ const TagModule = {
     }
 }
 
+const ArticleModule = {
+    state: {
+        userArticles: [],
+        globalArticles: []
+    },
+    getters: {
+        getGlobalArticles: state => state.globalArticles,
+        getUserArticles: state => state.userArticles
+    },
+    mutations: {
+        setGlobalArticles: (state, articles) => state.globalArticles = articles,
+        setUserArticles: (state, articles) => state.userArticles = articles
+    },
+    actions: {
+        setGlobalArticles: (store, articleList) => store.commit('setGlobalArticles', articleList),
+        setUserArticles: (store, articleList) => store.commit('setUserArticles', articleList)
+    }
+}
+
 const store = new Vuex.Store({
     modules: {
         user: UserModule,
-        tags: TagModule
+        tags: TagModule,
+        articles: ArticleModule
     }
 });
 
