@@ -51,7 +51,7 @@ export default {
        .then(response => {
           let user = response.data.user;
           store.dispatch('login', user);
-          router.push('home');
+          router.push({name: 'home'});
         })
         .catch(error => console.log(error));
     }

@@ -4,24 +4,24 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <router-link class="nav-link" to="home">Home</router-link>
+                <router-link class="nav-link" :to="{name: 'home'}">Home</router-link>
                 <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item active">
-                <router-link class="nav-link" v-if="isLoggedIn" to="editor">New Article</router-link>
+                <router-link class="nav-link" v-if="isLoggedIn" :to="{name: 'editor'}">New Article</router-link>
                 <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item">
-                <router-link class="nav-link" v-if="isLoggedIn" to="article">Settings</router-link>
+                <router-link class="nav-link" v-if="isLoggedIn" :to="{name: 'settings'}">Settings</router-link>
                 <span class="sr-only">(current)</span>
             </li>
             <li class="navbar-text" v-if="isLoggedIn">{{ userName }}</li>
             <li class="nav-item">
-                <router-link class="nav-link" v-if="!isLoggedIn" to="sign-in"> Sign In</router-link>
+                <router-link class="nav-link" v-if="!isLoggedIn" :to="{name: 'sign-in'}"> Sign In</router-link>
                     <span class="sr-only">(current)</span>
             </li>
             <li class="nav-item">
-                    <router-link class="nav-link" v-if="!isLoggedIn" to="sign-up"> Sign Up</router-link>
+                    <router-link class="nav-link" v-if="!isLoggedIn" :to="{name: 'sign-up'}"> Sign Up</router-link>
                     <span class="sr-only">(current)</span>
             </li>
         </ul>

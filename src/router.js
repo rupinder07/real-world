@@ -4,13 +4,14 @@ import Home from './views/Home.vue'
 import SignIn from './views/SignIn.vue'
 import SignUp from './views/SignUp.vue'
 import Editor from './views/Editor.vue'
+import ArticleDetails from './views/ArticleDetails.vue'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/home',
+      path: '/',
       name: 'home',
       component: Home
     },
@@ -28,6 +29,12 @@ export default new Router({
       path: '/editor',
       name: 'editor',
       component: Editor
+    },
+    {
+      path: '/articles/:slug',
+      name: 'article-details',
+      component: ArticleDetails,
+      props: true
     }
   ]
 })
