@@ -6,13 +6,21 @@
             </div>
             {{article.description}}
             <User :username='username' :updatedAt='updatedAt'/>
-            <textarea class="form-control" rows="5" id="comment" v-model="comment" placeholder="Write a comment..."></textarea>
+            <textarea class="form-control" rows="5" id="commentarea" v-model="comment" placeholder="Write a comment..."></textarea>
             <button type="submit" class="btn btn-success align-right"  @click="addComment">Post Comment</button>
             <br/>
             <br/>
             <h3 class="align-center"> Comments </h3>
-            <ul class="list-group" v-for="c in commentList" :key="c">
-                <li class="list-group-item">c</li>
+            <ul class="list-group" v-for="c in commentList" :key="c.id">
+                <li class="list-group-item">
+                    <div>
+                        {{c.body}}
+                        <button type="button" class="btn btn-light align-right" v-if="c.author.username == currentUser">Edit</button>
+                        <button type="button" class="btn btn-danger align-right" v-if="c.author.username == currentUser">Delete</button>
+                    </div>
+                    
+                    
+                </li>
             </ul>
     </div>
 </template>
@@ -39,9 +47,16 @@ export default {
     components: {
         User
     },
+
+    computed: {
+        currentUser() {
+            return this.$store.getters.getUser.username;
+        }
+    },
     
     methods: {
         addComment() {
+            document.getElementById('commentarea').textContent = 'Write a comment...'
             let router = this.$router; 
             let store = this.$store;
             AxiosService.post('articles/'+ this.article.slug+'/comments',
@@ -51,8 +66,7 @@ export default {
                 },
             },
             this.$store.getters.getUser.token)
-            .then((response) => {
-                store.dispatch('login', response.data.user)   
+            .then((response) => {  
                 router.push({name: 'article-details', slug: this.article.slug});
             })
             .catch((error) => console.log(error));
