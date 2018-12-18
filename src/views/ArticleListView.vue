@@ -84,9 +84,6 @@ export default {
 
 <style>
     .article-list-container {
-        max-width: 80%;
-        padding-left: 10%;
-        padding-right: 10%;
         margin-bottom: 10px;
     }
 

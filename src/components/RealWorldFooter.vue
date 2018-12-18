@@ -1,6 +1,8 @@
 <template>
     <div class="footer">
-        <span class="logo">conduit</span> An Interactive learning project from <a href="#">Thinkster</a>. Code & design licensed under MIT.
+        <div class="container">
+            <span class="logo">conduit</span> An Interactive learning project from <a href="#">Thinkster</a>. Code & design licensed under MIT.
+        </div>
     </div>
 </template>
 
@@ -12,14 +14,20 @@ export default {
 </script>
 
 <style>
-    .footer{
+
+    html {
         position: relative;
+        min-height: 100vh;
+        padding-bottom: 100px;
+    }
+    
+    .footer{
+        background: #f3f3f3;
+        margin-top: 3rem;
+        padding: 1rem 0;
+        position: absolute;
         bottom: 0;
-        background: #d8d8d8;
-        padding: 10px;
         width: 100%;
-        max-width: 1280px;
-        margin-left: 15%
     }
 
     .logo {

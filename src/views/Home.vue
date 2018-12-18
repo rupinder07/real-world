@@ -1,8 +1,10 @@
 <template>
     <div>
-      <div class="banner">
+      <div class="banner home">
+        <div class="container text-center" >
         <h1>conduit</h1>
         <h2>A place to share your knowledge</h2>
+        </div>
       </div>
       <div class="container">
         <div class="row margin-top-30">
@@ -43,11 +45,12 @@ export default {
     color: #fff
   }
 
-  .banner h1{
+  .banner.home h1{
     font-family: titillium web,sans-serif;
     font-weight: 700;
     font-size: 3.5rem;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    text-align: center;
   }
 
   .banner h2 {

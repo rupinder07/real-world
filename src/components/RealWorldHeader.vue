@@ -34,6 +34,7 @@ export default {
     name: 'RealWorldHeader',
     computed: {
         isLoggedIn: function() {
+            console.log(this.$store.getters.getUser != null)
             return this.$store.getters.getUser != null;
         },
 

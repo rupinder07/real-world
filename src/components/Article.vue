@@ -10,7 +10,7 @@
                     <h5> {{article.description}}</h5>
                 </div>
                 <div class="row  margin-top-10">
-                    <router-link :to="{name: 'article-details', params: {slug: article.slug}}" style="text-decoration:none; color:#C1CADE"> Read more...</router-link>
+                    <router-link :to="{name: 'article-details', params: {slug: article.slug, article: article, username: article.author.username, updatedAt: article.updatedAt}}" style="text-decoration:none; color:#C1CADE"> Read more...</router-link>
                 </div>
             </li>
         </ul>
