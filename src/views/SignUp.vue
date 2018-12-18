@@ -59,7 +59,7 @@ export default {
             })
             .then((response) => {
                 store.dispatch('login', response.data.user)   
-                router.push('home');
+                router.push({name: 'home'});
             })
             .catch((error) => console.log(error));
         }

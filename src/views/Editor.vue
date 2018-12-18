@@ -52,7 +52,7 @@ export default {
             },
             this.$store.getters.getUser.token)
             .then(() => {   
-                router.push('home');
+                router.push({name: 'home'});
             })
             .catch((error) => console.log(error));
         }
